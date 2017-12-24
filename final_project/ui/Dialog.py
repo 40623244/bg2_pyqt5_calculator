@@ -23,6 +23,17 @@ class Dialog(QDialog, Ui_Dialog):
         """
         super(Dialog, self).__init__(parent)
         self.setupUi(self)
+        
+        self.clearButton.clicked.connect(self.clear)
+        self.clearAllButton.clicked.connect(self.clearAll)
+        self.pointButton.clicked.connect(self.pointClicked)
+        self.display.setText('0')
+        self.wait = True
+        self.point = True
+        number=[self.one, self.two, self.three, self.four, self.five, \
+            self.six, self.seven, self.eight, self.nine, self.zero]
+        for i in number:
+            i.clicked.connect(self.digitClicked)
         '''以下為使用者自行編寫程式碼區'''
 
     def digitClicked(self):
@@ -31,7 +42,15 @@ class Dialog(QDialog, Ui_Dialog):
         當顯示幕已經為 0, 再按零不會顯示 00, 而仍顯示 0 或 0.0
         
         '''
-        pass
+        #pass
+        button=self.sender()
+        if self.display.text() == '0' and int(button.text())== 0.0:
+            return
+            self.wait =True
+        if self.wait :
+            self.display.clear()
+            self.wait = False
+        self.display.setText(self.display.text() + button.text())
         
     def unaryOperatorClicked(self):
         '''單一運算元按下後處理方法'''
@@ -51,8 +70,11 @@ class Dialog(QDialog, Ui_Dialog):
         
     def pointClicked(self):
         '''小數點按下後的處理方法'''
-        pass
-        
+        #pass
+        if self.point :
+            self.display.setText(self.display.text() + '.')
+            self.point = False
+            self.wait = False
     def changeSignClicked(self):
         '''變號鍵按下後的處理方法'''
         pass
@@ -63,12 +85,16 @@ class Dialog(QDialog, Ui_Dialog):
         
     def clear(self):
         '''清除鍵按下後的處理方法'''
-        pass
-        
+        #pass
+        self.display.setText('0')
+        self.wait = True
+        self.point = True
     def clearAll(self):
         '''全部清除鍵按下後的處理方法'''
-        pass
-        
+        #pass
+        self.display.setText('0')
+        self.wait = True
+        self.point = True
     def clearMemory(self):
         '''清除記憶體鍵按下後的處理方法'''
         pass
