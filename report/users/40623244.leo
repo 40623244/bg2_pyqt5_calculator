@@ -48,8 +48,10 @@
 <v t="yen.20170429215830.1"><vh>機械系統模擬</vh></v>
 <v t="yen.20170429215802.1"><vh>演化運算</vh></v>
 </v>
-<v t="yen.20170429215922.1"><vh>@clean leo_editor.md</vh>
-<v t="yen.20170429220001.1"><vh>Scripting</vh></v>
+<v t="yen.20170429215922.1" a="E"><vh>@clean memory_and_calculate.md</vh>
+<v t="leo.20171224213906.1"><vh>記憶體按鍵處理</vh></v>
+<v t="leo.20171224213904.1"><vh>直接運算</vh></v>
+<v t="yen.20170429220001.1"><vh>運算方式</vh></v>
 </v>
 <v t="yen.20170429220128.1"><vh>@clean github.md</vh>
 <v t="yen.20170429220137.1"><vh>Github</vh></v>
@@ -223,6 +225,14 @@ abstract: |
 </t>
 <t tx="leo.20171119234752.1"></t>
 <t tx="leo.20171119234822.1"></t>
+<t tx="leo.20171224213904.1">直接運算
+---
+
+直接運算 的內容</t>
+<t tx="leo.20171224213906.1">記憶體按鍵處理
+---
+
+記憶體按鍵處理 的內容</t>
 <t tx="yen.20170429103742.1"></t>
 <t tx="yen.20170429103940.1"></t>
 <t tx="yen.20170429132400.1">每一位協同人員各在 users 目錄中建立一個 .leo 檔案
@@ -557,16 +567,16 @@ Table: 價目表 {#tbl:價目表}
 [http://www.tablesgenerator.com/markdown_tables]: http://www.tablesgenerator.com/markdown_tables
 
 </t>
-<t tx="yen.20170429215922.1">Leo Editor
+<t tx="yen.20170429215922.1">記憶體按鍵處理與直接運算(運算方式)
 ===
 
-Leo Editor 的概要
+記憶體按鍵處理與直接運算(運算方式) 的概要
 
 @others</t>
-<t tx="yen.20170429220001.1">Scripting
+<t tx="yen.20170429220001.1">運算方式
 ---
 
-Scripting 的內容</t>
+運算方式 的內容</t>
 <t tx="yen.20170429220128.1">Github
 ===
 
