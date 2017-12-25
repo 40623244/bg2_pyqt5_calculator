@@ -6,7 +6,7 @@ title_zh: 'PyQt5 事件導向計算器'
 title_en: 'PyQt5 Event-Driven Calculator Project'
 author:
 - 設計一乙 40623244 林俊鎧
-- 設計一乙 40623240
+- 設計一乙 40623240 何冠均
 - 設計一乙 40623241
 - 設計一乙 40623242 高宇辰
 - 設計一乙 40623243 盧逸誠
