@@ -51,7 +51,7 @@
 <v t="yen.20170429215922.1"><vh>@clean leo_editor.md</vh>
 <v t="yen.20170429220001.1"><vh>Scripting</vh></v>
 </v>
-<v t="yen.20170429220128.1"><vh>@clean github.md</vh>
+<v t="yen.20170429220128.1"><vh>@clean 40623242.md</vh>
 <v t="yen.20170429220137.1"><vh>Github</vh></v>
 </v>
 <v t="yen.20170429220231.1"><vh>@clean fossil.md</vh>
@@ -95,6 +95,7 @@ chapter_list = " ".join("./paragraph/" + i for i in [
 "computer_programming.md", 
 "computer_aided_design.md", 
 "memory_and_calculate.md", 
+"40623242.md", 
 #"github.md", 
 #"fossil.md", 
 #"onshape.md", 
@@ -567,7 +568,7 @@ Leo Editor 的概要
 ---
 
 Scripting 的內容</t>
-<t tx="yen.20170429220128.1">Github
+<t tx="yen.20170429220128.1">40623242 CP
 ===
 
 Github 的概要
