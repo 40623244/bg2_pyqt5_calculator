@@ -26,7 +26,7 @@
 </v>
 <v t="leo.20171119234822.1" a="E"><vh>各章節內容</vh>
 <v t="yen.20170429214845.1" a="E"><vh>@path paragraph</vh>
-<v t="yen.20170429214838.1"><vh>@clean computer_hardware.md</vh>
+<v t="yen.20170429214838.1"><vh>@clean 40623243.md</vh>
 <v t="yen.20170429214838.3"><vh>電腦硬體</vh></v>
 </v>
 <v t="yen.20170429215041.1"><vh>@clean operating_system.md</vh>
@@ -91,9 +91,9 @@ g.es("---Pandoc---")
 chapter_list = " ".join("./paragraph/" + i for i in [
 "computer_hardware.md",
 "40623242.md", 
-"40623243.md", 
+"computer_network.md", 
 "40623245.md", 
-"40623240.md", 
+"computer_aided_design.md", 
 "memory_and_calculate.md", 
 #"github.md", 
 #"fossil.md", 
@@ -121,10 +121,10 @@ title_zh: 'PyQt5 事件導向計算器'
 title_en: 'PyQt5 Event-Driven Calculator Project'
 author:
 - 設計一乙 40623244 林俊鎧
-- 設計一乙 40623240 何冠均
+- 設計一乙 40623240
 - 設計一乙 40623241
 - 設計一乙 40623242 高宇辰
-- 設計一乙 40623243 盧逸誠
+- 設計一乙 40623243
 - 設計一乙 40623245 練峪愷
 advisor_zh: '嚴家銘'
 date: '2017.12.15'
@@ -230,7 +230,7 @@ abstract: |
 各自選擇要編輯的 .md 檔案, 可以使用 @edit 或 @clean 節點編輯指令
 
 除非必要否則不更動 markdown 目錄下的 template.tex 檔案</t>
-<t tx="yen.20170429214838.1">電腦硬體
+<t tx="yen.20170429214838.1">40623243
 ===
 
 電腦硬體 的概要

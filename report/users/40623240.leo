@@ -29,7 +29,7 @@
 <v t="yen.20170429214838.1"><vh>@clean computer_hardware.md</vh>
 <v t="yen.20170429214838.3"><vh>電腦硬體</vh></v>
 </v>
-<v t="yen.20170429215041.1"><vh>@clean operating_system.md</vh>
+<v t="yen.20170429215041.1"><vh>@clean 40623240.md</vh>
 <v t="yen.20170429215130.1"><vh>Windows</vh></v>
 <v t="yen.20170429215205.1"><vh>Ubuntu</vh></v>
 </v>
@@ -93,7 +93,7 @@ chapter_list = " ".join("./paragraph/" + i for i in [
 "40623242.md", 
 "40623243.md", 
 "40623245.md", 
-"40623240.md", 
+"computer_aided_design.md", 
 "memory_and_calculate.md", 
 #"github.md", 
 #"fossil.md", 
