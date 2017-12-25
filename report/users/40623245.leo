@@ -56,7 +56,7 @@
 </v>
 <v t="yen.20170429220231.1" a="E"><vh>@clean 40623245.md</vh>
 <v t="yen.20170429220231.2"><vh>multiplicative&amp;Division OperatorClicked</vh></v>
-<v t="leo.20171225150841.1"><vh>Fossil commands</vh></v>
+<v t="leo.20171225150841.1"><vh>心得</vh></v>
 </v>
 <v t="yen.20170429220335.1"><vh>@clean onshape.md</vh>
 <v t="yen.20170429220335.2"><vh>FeatureScript</vh></v>
@@ -122,10 +122,10 @@ title_zh: 'PyQt5 事件導向計算器'
 title_en: 'PyQt5 Event-Driven Calculator Project'
 author:
 - 設計一乙 40623244 林俊鎧
-- 設計一乙 40623240
+- 設計一乙 40623240 何冠均
 - 設計一乙 40623241
 - 設計一乙 40623242 高宇辰
-- 設計一乙 40623243
+- 設計一乙 40623243 盧逸誠
 - 設計一乙 40623245 練峪愷
 advisor_zh: '嚴家銘'
 date: '2017.12.15'
@@ -224,7 +224,7 @@ abstract: |
 </t>
 <t tx="leo.20171119234752.1"></t>
 <t tx="leo.20171119234822.1"></t>
-<t tx="leo.20171225150841.1">Fossil Commands
+<t tx="leo.20171225150841.1">計算機程式心得
 ---
 
 Fossil Commands 的內容</t>
