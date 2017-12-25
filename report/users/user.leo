@@ -90,9 +90,9 @@ g.es("---Pandoc---")
 # 選擇所要納入的 Markdown 檔案, 不納入的檔案名稱前方加上  # 即可
 chapter_list = " ".join("./paragraph/" + i for i in [
 "computer_hardware.md",
-"operating_system.md", 
+"40623242.md", 
 "computer_network.md", 
-"computer_programming.md", 
+"40623245.md", 
 "computer_aided_design.md", 
 "memory_and_calculate.md", 
 #"github.md", 
@@ -125,7 +125,7 @@ author:
 - 設計一乙 40623241
 - 設計一乙 40623242 高宇辰
 - 設計一乙 40623243
-- 設計一乙 40623245
+- 設計一乙 40623245 練峪愷
 advisor_zh: '嚴家銘'
 date: '2017.12.15'
 ---
@@ -567,16 +567,18 @@ Leo Editor 的概要
 ---
 
 Scripting 的內容</t>
-<t tx="yen.20170429220128.1">Github
+<t tx="yen.20170429220128.1">40623242 CP
 ===
 
 Github 的概要
 
-@others</t>
+@others
+</t>
 <t tx="yen.20170429220137.1">Github
 ---
 
-Github 的內容</t>
+Github 的內容
+</t>
 <t tx="yen.20170429220231.1">Fossil SCM
 ===
 
