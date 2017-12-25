@@ -91,9 +91,9 @@ g.es("---Pandoc---")
 chapter_list = " ".join("./paragraph/" + i for i in [
 "computer_hardware.md",
 "40623242.md", 
-"computer_network.md", 
+"40623243.md", 
 "40623245.md", 
-"computer_aided_design.md", 
+"40623240.md", 
 "memory_and_calculate.md", 
 #"github.md", 
 #"fossil.md", 
@@ -121,10 +121,10 @@ title_zh: 'PyQt5 事件導向計算器'
 title_en: 'PyQt5 Event-Driven Calculator Project'
 author:
 - 設計一乙 40623244 林俊鎧
-- 設計一乙 40623240
+- 設計一乙 40623240 何冠均
 - 設計一乙 40623241
 - 設計一乙 40623242 高宇辰
-- 設計一乙 40623243
+- 設計一乙 40623243 盧逸誠
 - 設計一乙 40623245 練峪愷
 advisor_zh: '嚴家銘'
 date: '2017.12.15'

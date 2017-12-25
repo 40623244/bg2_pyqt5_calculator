@@ -26,7 +26,7 @@
 </v>
 <v t="leo.20171119234822.1" a="E"><vh>各章節內容</vh>
 <v t="yen.20170429214845.1" a="E"><vh>@path paragraph</vh>
-<v t="yen.20170429214838.1"><vh>@clean computer_hardware.md</vh>
+<v t="yen.20170429214838.1"><vh>@clean 40623243.md</vh>
 <v t="yen.20170429214838.3"><vh>電腦硬體</vh></v>
 </v>
 <v t="yen.20170429215041.1"><vh>@clean operating_system.md</vh>
@@ -51,10 +51,8 @@
 <v t="yen.20170429215922.1"><vh>@clean leo_editor.md</vh>
 <v t="yen.20170429220001.1"><vh>Scripting</vh></v>
 </v>
-<v t="yen.20170429220128.1" a="E"><vh>@clean 40623242.md</vh>
-<v t="leo.20171225150715.1"><vh>clearall</vh></v>
-<v t="leo.20171225150623.1"><vh>backspace</vh></v>
-<v t="yen.20170429220137.1"><vh>clear</vh></v>
+<v t="yen.20170429220128.1"><vh>@clean github.md</vh>
+<v t="yen.20170429220137.1"><vh>Github</vh></v>
 </v>
 <v t="yen.20170429220231.1"><vh>@clean fossil.md</vh>
 <v t="yen.20170429220231.2"><vh>Fossil commands</vh></v>
@@ -92,12 +90,11 @@ g.es("---Pandoc---")
 # 選擇所要納入的 Markdown 檔案, 不納入的檔案名稱前方加上  # 即可
 chapter_list = " ".join("./paragraph/" + i for i in [
 "computer_hardware.md",
-"operating_system.md", 
+"40623242.md", 
 "computer_network.md", 
-"computer_programming.md", 
+"40623245.md", 
 "computer_aided_design.md", 
 "memory_and_calculate.md", 
-"40623242.md", 
 #"github.md", 
 #"fossil.md", 
 #"onshape.md", 
@@ -226,32 +223,6 @@ abstract: |
 </t>
 <t tx="leo.20171119234752.1"></t>
 <t tx="leo.20171119234822.1"></t>
-<t tx="leo.20171225150623.1">退格按鍵處理
----
-
-###退格按鍵應用
-
-*按下計算機上的 backspace 鍵後,  保留除了最後一個字元的字串。
-
-###退格按鍵處理
-
-* 由 backspaceClicked() 處理, 這時可以利用 Python 字串數列中的 [:-1], 保留除了最後一個字元的字串
-
-*離開 backspaceClicked() 前 ,將顯示幕中原有字串的 [:-1] 字串, 顯示在 display 上
-
-*若退格後 display 上為空字串, 則顯示 0, 並且將 waitingForOperand 起始設為 True, 表示等待新運算數中</t>
-<t tx="leo.20171225150715.1">清除按鍵
----
-
-###清除按鍵應用
-
-*按下計算機上的 clearall 鍵後,  所有的運算重置設為0
-
-###清除按鍵處理
-
-* 以 clear() 方法處理, 進入函式後, 將現有的運算數重置為 0
-
-*離開 clear() 前, 將 waitingForOperand 起始設為 True, 表示等待新運算數中</t>
 <t tx="yen.20170429103742.1"></t>
 <t tx="yen.20170429103940.1"></t>
 <t tx="yen.20170429132400.1">每一位協同人員各在 users 目錄中建立一個 .leo 檔案
@@ -259,7 +230,7 @@ abstract: |
 各自選擇要編輯的 .md 檔案, 可以使用 @edit 或 @clean 節點編輯指令
 
 除非必要否則不更動 markdown 目錄下的 template.tex 檔案</t>
-<t tx="yen.20170429214838.1">電腦硬體
+<t tx="yen.20170429214838.1">40623243
 ===
 
 電腦硬體 的概要
@@ -596,25 +567,18 @@ Leo Editor 的概要
 ---
 
 Scripting 的內容</t>
-<t tx="yen.20170429220128.1">40623242 計算機程式
+<t tx="yen.20170429220128.1">40623242 CP
 ===
 
-###退格按鍵處理以及清除按鍵處理
+Github 的概要
 
-
-@others</t>
-<t tx="yen.20170429220137.1">清除按鍵
+@others
+</t>
+<t tx="yen.20170429220137.1">Github
 ---
 
-###清除按鍵應用
-
-*按下計算機上的 clear 鍵後,  把 +、-、*、/ 後的數值重置
-
-###清除按鍵處理
-
-* 以 clear() 方法處理, 進入函式後, 將現有的運算數重置為 0
-
-*離開 clear() 前, 將 waitingForOperand 起始設為 True, 表示等待新運算數中</t>
+Github 的內容
+</t>
 <t tx="yen.20170429220231.1">Fossil SCM
 ===
 
