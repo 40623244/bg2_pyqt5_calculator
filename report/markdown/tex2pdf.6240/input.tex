@@ -1,0 +1,1337 @@
+\documentclass[12pt,,]{report}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+
+    \usepackage{xeCJK}
+    % 中文自動換行
+    \XeTeXlinebreaklocale "zh"
+    % 文字的彈性間距
+    \XeTeXlinebreakskip = 0pt plus 1pt
+    \newfontlanguage{Chinese}{CHN}
+    % 章次20級，節次16級，小節次以下14級，本文12級字
+    \def\LARGE{\fontsize{20}{30}\selectfont}%章次
+    \def\Large{\fontsize{16}{24}\selectfont}%節次
+    \def\large{\fontsize{14}{21}\selectfont}%小節次
+    \usepackage{indentfirst}
+    \usepackage{CJKnumb}
+    \renewcommand{\figurename}{圖}
+    \renewcommand{\thefigure}{{\arabic{chapter}}.\arabic{figure}}
+    \renewcommand{\tablename}{表}
+    \renewcommand{\thetable}{{\arabic{chapter}}.\arabic{table}}
+    %重製章節
+    \renewcommand{\chaptername}{}
+    \renewcommand{\thechapter}{第\CJKnumber{\arabic{chapter}}章}
+    \renewcommand{\thesection}{{\arabic{chapter}}.\arabic{section}}
+    \renewcommand{\thesubsection}{{\arabic{chapter}}.{\arabic{section}}.\arabic{subsection}}
+    %設定行距與中英文字型
+    \linespread{1}\selectfont
+    \setCJKmainfont{SimSun}
+    \setmainfont{Times New Roman}
+    \setromanfont{Times New Roman}
+    \setmonofont{Times New Roman}
+    %重製章節標籤
+    \usepackage{titlesec}
+    \titleformat{\chapter}[block]{\LARGE\centering}{\thechapter}{0.5em}{}
+    \titleformat{\section}[block]{\Large}{\thesection}{0.5em}{}
+    \titleformat{\subsection}[block]{\large}{\thesubsection}{0.5em}{}
+    % 重製目錄
+    \usepackage{titletoc}
+    \titlespacing{\chapter}{0pt}{*0}{*2}
+    \titlespacing{\section}{0pt}{*1}{*1}
+    \titlespacing{\subsection}{0pt}{*1}{*1}
+    \titlespacing{\subsubsection}{0pt}{*1}{*1}
+    \titlecontents{chapter}[0em]{}{\contentspush{\thecontentslabel}\hspace*{1em}}{}{\titlerule*[0.7pc]{.}\contentspage}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdfauthor={設計一乙 40623244 林俊鎧; 設計一乙 40623240 何冠均; 設計一乙 40623241 郭祐齊; 設計一乙 40623242 高宇辰; 設計一乙 40623243 盧逸誠; 設計一乙 40623245 練峪愷},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[shorthands=off,main=]{babel}
+\else
+  \usepackage{polyglossia}
+  \setmainlanguage[]{}
+\fi
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\begin{document}
+%Cover Start
+\begin{titlepage}
+\vspace{1cm}
+\begin{center}
+\fontsize{36}{54}\selectfont{
+    國立虎尾科技大學\par
+}
+\fontsize{28}{42}\selectfont{機械設計工程系\par}
+\fontsize{24}{36}\selectfont{計算機程式 bg8 期末報告\par}
+\vspace{1.5cm}
+\fontsize{20}{30}\selectfont{
+    PyQt5 事件導向計算器\par
+    PyQt5 Event-Driven Calculator Project\par
+}
+\vspace{\fill}
+\fontsize{18}{27}\selectfont{
+    學生：\par
+    設計一乙 40623244 林俊鎧 \par 設計一乙 40623240 何冠均 \par 設計一乙 40623241 郭祐齊 \par 設計一乙 40623242 高宇辰 \par 設計一乙 40623243 盧逸誠 \par 設計一乙 40623245 練峪愷 \par
+    指導教授：嚴家銘\par
+}
+\vspace{1.5cm}
+\fontsize{16}{24}\selectfont{2017.12.15\par}
+\end{center}
+\vspace{1cm}
+\end{titlepage}
+
+\newcommand\frontmatter{
+    \cleardoublepage
+    \pagenumbering{roman}
+}
+
+\newcommand\mainmatter{
+    \cleardoublepage
+    \pagenumbering{arabic}
+}
+
+\newcommand\backmatter{
+    \if@openright
+        \cleardoublepage
+    \else
+        \clearpage
+    \fi
+}
+
+%Document start
+
+% Set page number to arabic i ii...
+\frontmatter
+\renewcommand{\abstractname}{\LARGE \center 摘要}
+\chapter*{摘要}
+\addcontentsline{toc}{chapter}{摘要}
+\fontsize{14}{21}\selectfont{這裡是摘要內容。A pipe character, followed by an indented block of text
+is treated as a literal block, in which newlines are preserved
+throughout the block, including the final newline.
+
+\begin{itemize}
+\tightlist
+\item
+  以 YAML 的方式插入。
+\item
+  The `+' indicator says to keep newlines at the end of text blocks.
+\item
+  使用 Markdown 語法。
+\item
+  前面使用加號
+\end{itemize}
+
+本研究的重點在於 \ldots{}}
+
+
+\begingroup
+    \renewcommand{\contentsname}{\center 目錄 \addcontentsline{toc}{chapter}{目錄}}
+    \renewcommand{\numberline}[1]{~#1\hspace*{1em}}
+        \setcounter{tocdepth}{2}
+    \tableofcontents
+    \newcommand{\lotlabel}{表}
+    \renewcommand{\listtablename}{\center 表目錄 \addcontentsline{toc}{chapter}{表目錄}}
+    \renewcommand{\numberline}[1]{\lotlabel~#1\hspace*{1em}}
+    \listoftables
+    \newcommand{\loflabel}{圖}
+    \renewcommand{\listfigurename}{\center 圖目錄 \addcontentsline{toc}{chapter}{圖目錄}}
+    \renewcommand{\numberline}[1]{\loflabel~#1\hspace*{1em}}
+    \listoffigures
+\endgroup
+
+% Start normal page number, 1 2 3
+\mainmatter
+\hypertarget{ux96fbux8166ux786cux9ad4}{%
+\chapter{電腦硬體}\label{ux96fbux8166ux786cux9ad4}}
+
+電腦硬體 的概要
+
+前言內容。
+
+~
+
+一個範例數學式：\[\beta=\cos^{-1}{\frac{L0^{2}+d_{AB}^{2}-R0^{2}}{2\times{L0\times{d_{AB}}}}}\]
+
+~
+
+關於數學式可以參考這裡：\url{http://www.hostmath.com/}
+
+提及了某篇刊物{[}1{]}在這裡。
+
+\hypertarget{ux64cdux4f5cux7cfbux7d71}{%
+\chapter{操作系統}\label{ux64cdux4f5cux7cfbux7d71}}
+
+操作系統 的概要
+
+\hypertarget{windows}{%
+\section{Windows}\label{windows}}
+
+Windows 的內容
+
+有一張圖片：
+
+\begin{figure}
+\centering
+\includegraphics{./tex2pdf.6240/e0ef408d9559203849a0aa26f79f9b032b709c7a.png}
+\caption{Kmol\label{fig:駱駝}}
+\end{figure}
+
+稱為圖 \ref{fig:駱駝}。
+
+各 md 檔案可以在 images 目錄下自訂與 md 檔案名稱相同的子目錄存放影像檔案
+
+\hypertarget{ubuntu}{%
+\section{Ubuntu}\label{ubuntu}}
+
+Ubuntu 的內容
+
+有一張圖片：
+
+\begin{figure}
+\centering
+\includegraphics{./tex2pdf.6240/e0ef408d9559203849a0aa26f79f9b032b709c7a.png}
+\caption{Kmol\label{fig:駱駝}}
+\end{figure}
+
+稱為圖 \ref{fig:駱駝}。
+
+各 md 檔案可以在 images 目錄下自訂與 md 檔案名稱相同的子目錄存放影像檔案
+
+\hypertarget{ux96fbux8166ux7db2ux8def}{%
+\chapter{電腦網路}\label{ux96fbux8166ux7db2ux8def}}
+
+電腦網路 的概要
+
+\hypertarget{ipv4}{%
+\section{IPv4}\label{ipv4}}
+
+IPv4 的內容
+
+有一張圖片：
+
+\begin{figure}
+\centering
+\includegraphics{./tex2pdf.6240/e0ef408d9559203849a0aa26f79f9b032b709c7a.png}
+\caption{Kmol\label{fig:駱駝}}
+\end{figure}
+
+稱為圖 \ref{fig:駱駝}。
+
+各 md 檔案可以在 images 目錄下自訂與 md 檔案名稱相同的子目錄存放影像檔案
+
+\hypertarget{ipv6}{%
+\section{IPv6}\label{ipv6}}
+
+IPv6 的內容
+
+有一張圖片：
+
+\begin{figure}
+\centering
+\includegraphics{./tex2pdf.6240/e0ef408d9559203849a0aa26f79f9b032b709c7a.png}
+\caption{Kmol\label{fig:駱駝}}
+\end{figure}
+
+稱為圖 \ref{fig:駱駝}。
+
+各 md 檔案可以在 images 目錄下自訂與 md 檔案名稱相同的子目錄存放影像檔案
+\href{http://www.google.com}{google}
+
+\href{http://www.google.com}{google} test
+
+\hypertarget{ux8a08ux7b97ux6a5fux7a0bux5f0f}{%
+\chapter{計算機程式}\label{ux8a08ux7b97ux6a5fux7a0bux5f0f}}
+
+計算機程式 的概要
+
+\hypertarget{c}{%
+\section{C}\label{c}}
+
+C 的內容
+
+其中包含一個表格：
+
+\begin{longtable}[]{@{}ccccccccc@{}}
+\caption{Python 網際框架比較 \label{tbl:網際框架}}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+Framework\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+Started\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py2\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py3\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+ORM\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+Template Engine\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Auth Moudule\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+Database Admin\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Project Scale\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+Framework\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+Started\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py2\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py3\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+ORM\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+Template Engine\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Auth Moudule\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+Database Admin\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Project Scale\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Pyramid\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+large\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Django\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2006\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+large\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Flask\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2010\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+small\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+稱為表 \ref{tbl:網際框架}。
+
+\begin{longtable}[]{@{}lcr@{}}
+\caption{價目表 \label{tbl:價目表}}\tabularnewline
+\toprule
+Tables & Are & Cool\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Tables & Are & Cool\tabularnewline
+\midrule
+\endhead
+col 1 is & left-aligned & \$1600\tabularnewline
+col 2 is & centered & \$12\tabularnewline
+col 3 is & right-aligned & \$1\tabularnewline
+\bottomrule
+\end{longtable}
+
+稱為表 \ref{tbl:價目表}。
+
+關於表格生成可以參考這裡：\url{http://www.tablesgenerator.com/markdown_tables}
+
+\hypertarget{python}{%
+\section{Python}\label{python}}
+
+Python 的內容
+
+其中包含一個表格：
+
+\begin{longtable}[]{@{}ccccccccc@{}}
+\caption{Python 網際框架比較 \label{tbl:網際框架}}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+Framework\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+Started\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py2\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py3\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+ORM\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+Template Engine\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Auth Moudule\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+Database Admin\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Project Scale\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+Framework\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+Started\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py2\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py3\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+ORM\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+Template Engine\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Auth Moudule\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+Database Admin\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Project Scale\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Pyramid\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+large\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Django\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2006\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+large\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Flask\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2010\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+small\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+稱為表 \ref{tbl:網際框架}。
+
+\begin{longtable}[]{@{}lcr@{}}
+\caption{價目表 \label{tbl:價目表}}\tabularnewline
+\toprule
+Tables & Are & Cool\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Tables & Are & Cool\tabularnewline
+\midrule
+\endhead
+col 1 is & left-aligned & \$1600\tabularnewline
+col 2 is & centered & \$12\tabularnewline
+col 3 is & right-aligned & \$1\tabularnewline
+\bottomrule
+\end{longtable}
+
+稱為表 \ref{tbl:價目表}。
+
+關於表格生成可以參考這裡：\url{http://www.tablesgenerator.com/markdown_tables}
+
+\hypertarget{brython}{%
+\section{Brython}\label{brython}}
+
+Brython 的內容
+
+其中包含一個表格：
+
+\begin{longtable}[]{@{}ccccccccc@{}}
+\caption{Python 網際框架比較 \label{tbl:網際框架}}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+Framework\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+Started\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py2\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py3\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+ORM\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+Template Engine\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Auth Moudule\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+Database Admin\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Project Scale\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+Framework\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+Started\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py2\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py3\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+ORM\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+Template Engine\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Auth Moudule\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+Database Admin\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Project Scale\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Pyramid\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+large\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Django\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2006\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+large\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Flask\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2010\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+small\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+稱為表 \ref{tbl:網際框架}。
+
+\begin{longtable}[]{@{}lcr@{}}
+\caption{價目表 \label{tbl:價目表}}\tabularnewline
+\toprule
+Tables & Are & Cool\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Tables & Are & Cool\tabularnewline
+\midrule
+\endhead
+col 1 is & left-aligned & \$1600\tabularnewline
+col 2 is & centered & \$12\tabularnewline
+col 3 is & right-aligned & \$1\tabularnewline
+\bottomrule
+\end{longtable}
+
+稱為表 \ref{tbl:價目表}。
+
+關於表格生成可以參考這裡：\url{http://www.tablesgenerator.com/markdown_tables}
+
+\hypertarget{pyqt}{%
+\section{PyQt}\label{pyqt}}
+
+PyQt 的內容
+
+其中包含一個表格：
+
+\begin{longtable}[]{@{}ccccccccc@{}}
+\caption{Python 網際框架比較 \label{tbl:網際框架}}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+Framework\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+Started\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py2\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py3\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+ORM\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+Template Engine\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Auth Moudule\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+Database Admin\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Project Scale\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+Framework\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+Started\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py2\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py3\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+ORM\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+Template Engine\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Auth Moudule\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+Database Admin\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Project Scale\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Pyramid\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+large\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Django\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2006\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+large\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Flask\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2010\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+small\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+稱為表 \ref{tbl:網際框架}。
+
+\begin{longtable}[]{@{}lcr@{}}
+\caption{價目表 \label{tbl:價目表}}\tabularnewline
+\toprule
+Tables & Are & Cool\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Tables & Are & Cool\tabularnewline
+\midrule
+\endhead
+col 1 is & left-aligned & \$1600\tabularnewline
+col 2 is & centered & \$12\tabularnewline
+col 3 is & right-aligned & \$1\tabularnewline
+\bottomrule
+\end{longtable}
+
+稱為表 \ref{tbl:價目表}。
+
+關於表格生成可以參考這裡：\url{http://www.tablesgenerator.com/markdown_tables}
+
+\hypertarget{ux96fbux8166ux8f14ux52a9ux8a2dux8a08}{%
+\chapter{電腦輔助設計}\label{ux96fbux8166ux8f14ux52a9ux8a2dux8a08}}
+
+電腦輔助設計 的概要
+
+\hypertarget{ux81eaux52d5ux63a7ux5236}{%
+\section{自動控制}\label{ux81eaux52d5ux63a7ux5236}}
+
+自動控制 的內容
+
+其中包含一個表格：
+
+\begin{longtable}[]{@{}ccccccccc@{}}
+\caption{Python 網際框架比較 \label{tbl:網際框架}}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+Framework\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+Started\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py2\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py3\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+ORM\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+Template Engine\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Auth Moudule\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+Database Admin\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Project Scale\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+Framework\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+Started\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py2\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py3\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+ORM\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+Template Engine\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Auth Moudule\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+Database Admin\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Project Scale\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Pyramid\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+large\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Django\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2006\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+large\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Flask\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2010\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+small\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+稱為表 \ref{tbl:網際框架}。
+
+\begin{longtable}[]{@{}lcr@{}}
+\caption{價目表 \label{tbl:價目表}}\tabularnewline
+\toprule
+Tables & Are & Cool\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Tables & Are & Cool\tabularnewline
+\midrule
+\endhead
+col 1 is & left-aligned & \$1600\tabularnewline
+col 2 is & centered & \$12\tabularnewline
+col 3 is & right-aligned & \$1\tabularnewline
+\bottomrule
+\end{longtable}
+
+稱為表 \ref{tbl:價目表}。
+
+關於表格生成可以參考這裡：\url{http://www.tablesgenerator.com/markdown_tables}
+
+\hypertarget{ux6a5fux68b0ux7cfbux7d71ux6a21ux64ec}{%
+\section{機械系統模擬}\label{ux6a5fux68b0ux7cfbux7d71ux6a21ux64ec}}
+
+機械系統模擬 的內容
+
+其中包含一個表格：
+
+\begin{longtable}[]{@{}ccccccccc@{}}
+\caption{Python 網際框架比較 \label{tbl:網際框架}}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+Framework\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+Started\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py2\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py3\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+ORM\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+Template Engine\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Auth Moudule\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+Database Admin\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Project Scale\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+Framework\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+Started\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py2\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py3\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+ORM\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+Template Engine\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Auth Moudule\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+Database Admin\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Project Scale\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Pyramid\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+large\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Django\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2006\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+large\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Flask\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2010\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+small\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+稱為表 \ref{tbl:網際框架}。
+
+\begin{longtable}[]{@{}lcr@{}}
+\caption{價目表 \label{tbl:價目表}}\tabularnewline
+\toprule
+Tables & Are & Cool\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Tables & Are & Cool\tabularnewline
+\midrule
+\endhead
+col 1 is & left-aligned & \$1600\tabularnewline
+col 2 is & centered & \$12\tabularnewline
+col 3 is & right-aligned & \$1\tabularnewline
+\bottomrule
+\end{longtable}
+
+稱為表 \ref{tbl:價目表}。
+
+關於表格生成可以參考這裡：\url{http://www.tablesgenerator.com/markdown_tables}
+
+\hypertarget{ux6f14ux5316ux904bux7b97-evolutionary-computation}{%
+\section{演化運算 (Evolutionary
+Computation)}\label{ux6f14ux5316ux904bux7b97-evolutionary-computation}}
+
+演化運算 (Evolutionary Computation) 的內容
+
+其中包含一個表格：
+
+\begin{longtable}[]{@{}ccccccccc@{}}
+\caption{Python 網際框架比較 \label{tbl:網際框架}}\tabularnewline
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+Framework\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+Started\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py2\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py3\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+ORM\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+Template Engine\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Auth Moudule\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+Database Admin\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Project Scale\strut
+\end{minipage}\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+\begin{minipage}[b]{0.09\columnwidth}\centering
+Framework\strut
+\end{minipage} & \begin{minipage}[b]{0.07\columnwidth}\centering
+Started\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py2\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+Py3\strut
+\end{minipage} & \begin{minipage}[b]{0.04\columnwidth}\centering
+ORM\strut
+\end{minipage} & \begin{minipage}[b]{0.13\columnwidth}\centering
+Template Engine\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Auth Moudule\strut
+\end{minipage} & \begin{minipage}[b]{0.12\columnwidth}\centering
+Database Admin\strut
+\end{minipage} & \begin{minipage}[b]{0.11\columnwidth}\centering
+Project Scale\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Pyramid\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2005\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+large\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Django\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2006\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+large\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.09\columnwidth}\centering
+Flask\strut
+\end{minipage} & \begin{minipage}[t]{0.07\columnwidth}\centering
+2010\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+V\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.04\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.13\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.12\columnwidth}\centering
+\strut
+\end{minipage} & \begin{minipage}[t]{0.11\columnwidth}\centering
+small\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
+
+稱為表 \ref{tbl:網際框架}。
+
+\begin{longtable}[]{@{}lcr@{}}
+\caption{價目表 \label{tbl:價目表}}\tabularnewline
+\toprule
+Tables & Are & Cool\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Tables & Are & Cool\tabularnewline
+\midrule
+\endhead
+col 1 is & left-aligned & \$1600\tabularnewline
+col 2 is & centered & \$12\tabularnewline
+col 3 is & right-aligned & \$1\tabularnewline
+\bottomrule
+\end{longtable}
+
+稱為表 \ref{tbl:價目表}。
+
+關於表格生成可以參考這裡：\url{http://www.tablesgenerator.com/markdown_tables}
+
+\hypertarget{ux8a18ux61b6ux9ad4ux6309ux9375ux8655ux7406ux8207ux76f4ux63a5ux904bux7b97ux904bux7b97ux65b9ux5f0f}{%
+\chapter{記憶體按鍵處理與直接運算(運算方式)}\label{ux8a18ux61b6ux9ad4ux6309ux9375ux8655ux7406ux8207ux76f4ux63a5ux904bux7b97ux904bux7b97ux65b9ux5f0f}}
+
+記憶體按鍵處理與直接運算(運算方式) 的概要
+
+\hypertarget{ux8a18ux61b6ux9ad4ux6309ux9375ux8655ux7406}{%
+\section{記憶體按鍵處理}\label{ux8a18ux61b6ux9ad4ux6309ux9375ux8655ux7406}}
+
+記憶體按鍵處理 的內容 直接運算 ---
+
+直接運算 的內容 運算方式 ---
+
+運算方式 的內容
+
+\hypertarget{ux8a08ux7b97ux6a5fux7a0bux5f0f-1}{%
+\chapter{40623242 計算機程式}\label{ux8a08ux7b97ux6a5fux7a0bux5f0f-1}}
+
+\#\#\#退格按鍵處理以及清除按鍵處理
+
+\hypertarget{ux6e05ux9664ux6309ux9375}{%
+\section{清除按鍵}\label{ux6e05ux9664ux6309ux9375}}
+
+清除按鍵應用
+
+*按下計算機上的 clearall 鍵後, 所有的運算重置設為0
+
+清除按鍵處理
+
+\begin{itemize}
+\tightlist
+\item
+  以 clear() 方法處理, 進入函式後, 將現有的運算數重置為 0
+\end{itemize}
+
+*離開 clear() 前, 將 waitingForOperand 起始設為 True, 表示等待新運算數中
+退格按鍵處理 ---
+
+退格按鍵應用
+
+*按下計算機上的 backspace 鍵後, 保留除了最後一個字元的字串。
+
+退格按鍵處理
+
+\begin{itemize}
+\tightlist
+\item
+  由 backspaceClicked() 處理, 這時可以利用 Python 字串數列中的
+  {[}:-1{]}, 保留除了最後一個字元的字串
+\end{itemize}
+
+*離開 backspaceClicked() 前 ,將顯示幕中原有字串的 {[}:-1{]} 字串, 顯示在
+display 上
+
+*若退格後 display 上為空字串, 則顯示 0, 並且將 waitingForOperand
+起始設為 True, 表示等待新運算數中 清除按鍵 ---
+
+清除按鍵應用
+
+\emph{按下計算機上的 clear 鍵後, 把 +、-、}、/ 後的數值重置
+
+清除按鍵處理
+
+\begin{itemize}
+\tightlist
+\item
+  以 clear() 方法處理, 進入函式後, 將現有的運算數重置為 0
+\end{itemize}
+
+*離開 clear() 前, 將 waitingForOperand 起始設為 True, 表示等待新運算數中
+
+\hypertarget{ux53c3ux8003ux6587ux737b}{%
+\chapter*{參考文獻}\label{ux53c3ux8003ux6587ux737b}}
+\addcontentsline{toc}{chapter}{參考文獻}
+
+\hypertarget{refs}{}
+\leavevmode\hypertarget{ref-myart}{}%
+{[}1{]} 作者名字, ``標題,'' \emph{刊物名稱}, vol. 4, no. 2, pp.
+201--213, Jul. 1993.
+
+
+\end{document}

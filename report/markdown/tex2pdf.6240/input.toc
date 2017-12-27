@@ -1,0 +1,26 @@
+\contentsline {chapter}{摘要}{i}{chapter*.1}
+\contentsline {chapter}{目錄}{ii}{chapter*.2}
+\contentsline {chapter}{表目錄}{iii}{chapter*.3}
+\contentsline {chapter}{圖目錄}{iv}{chapter*.4}
+\contentsline {chapter}{\numberline {第\CJKnumber {1}章}電腦硬體}{1}{chapter.1}
+\contentsline {chapter}{\numberline {第\CJKnumber {2}章}操作系統}{2}{chapter.2}
+\contentsline {section}{\numberline {{2}.1}Windows}{2}{section.2.1}
+\contentsline {section}{\numberline {{2}.2}Ubuntu}{2}{section.2.2}
+\contentsline {chapter}{\numberline {第\CJKnumber {3}章}電腦網路}{4}{chapter.3}
+\contentsline {section}{\numberline {{3}.1}IPv4}{4}{section.3.1}
+\contentsline {section}{\numberline {{3}.2}IPv6}{4}{section.3.2}
+\contentsline {chapter}{\numberline {第\CJKnumber {4}章}計算機程式}{6}{chapter.4}
+\contentsline {section}{\numberline {{4}.1}C}{6}{section.4.1}
+\contentsline {section}{\numberline {{4}.2}Python}{7}{section.4.2}
+\contentsline {section}{\numberline {{4}.3}Brython}{7}{section.4.3}
+\contentsline {section}{\numberline {{4}.4}PyQt}{8}{section.4.4}
+\contentsline {chapter}{\numberline {第\CJKnumber {5}章}電腦輔助設計}{10}{chapter.5}
+\contentsline {section}{\numberline {{5}.1}自動控制}{10}{section.5.1}
+\contentsline {section}{\numberline {{5}.2}機械系統模擬}{11}{section.5.2}
+\contentsline {section}{\numberline {{5}.3}演化運算 (Evolutionary Computation)}{11}{section.5.3}
+\contentsline {chapter}{\numberline {第\CJKnumber {6}章}記憶體按鍵處理與直接運算(運算方式)}{13}{chapter.6}
+\contentsline {section}{\numberline {{6}.1}記憶體按鍵處理}{13}{section.6.1}
+\contentsline {chapter}{\numberline {第\CJKnumber {7}章}40623242 計算機程式}{14}{chapter.7}
+\contentsline {section}{\numberline {{7}.1}清除按鍵}{14}{section.7.1}
+\contentsline {chapter}{參考文獻}{15}{chapter*.5}
+\contentsfinish 
