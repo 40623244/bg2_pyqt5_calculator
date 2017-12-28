@@ -23,7 +23,7 @@ class Dialog(QDialog, Ui_Dialog):
         """
         super(Dialog, self).__init__(parent)
         self.setupUi(self)
-        self.timesButton.clicked.connect(self.multiplicativeOperatorClicked)
+        
         self.clearButton.clicked.connect(self.clear)
         self.clearAllButton.clicked.connect(self.clearAll)
         self.pointButton.clicked.connect(self.pointClicked)
@@ -86,31 +86,7 @@ class Dialog(QDialog, Ui_Dialog):
         
     def equalClicked(self):
         '''等號按下後的處理方法'''
-        #pass
-        operand = float(self.display.text())
-
-        if self.pendingMultiplicativeOperator:
-            if not self.calculate(operand, self.pendingMultiplicativeOperator):
-                self.abortOperation()
-                return
-
-            operand = self.factorSoFar
-            self.factorSoFar = 0.0
-            self.pendingMultiplicativeOperator = ''
-
-        if self.pendingAdditiveOperator:
-            if not self.calculate(operand, self.pendingAdditiveOperator):
-                self.abortOperation()
-                return
-
-            self.pendingAdditiveOperator = ''
-        else:
-            self.sumSoFar = operand
-
-        self.display.setText(str(self.sumSoFar))
-        self.sumSoFar = 0.0
-        self.waitingForOperand = True
-
+        pass
         
     def pointClicked(self):
         '''小數點按下後的處理方法'''
