@@ -27,7 +27,6 @@ class Dialog(QDialog, Ui_Dialog):
         
         '''以下為使用者自行編寫程式碼區'''
         
-        #self.squareRootButtton.clicked.connect("sqrt", self.unaryOperatorClicked)
     #40623240
         number=[self.one, self.two, self.three, self.four, self.five, \
             self.six, self.seven, self.eight, self.nine, self.zero]
@@ -60,6 +59,11 @@ class Dialog(QDialog, Ui_Dialog):
         unaryOperator = [self.squareRootButton,  self.powerButton,  self.reciprocalButton]
         for i in unaryOperator:
             i.clicked.connect(self.unaryOperatorClicked)
+        self.clearMemoryButton.clicked.connect(self.clearMemory)
+        self.readMemoryButton.clicked.connect(self.readMemory)
+        self.setMemoryButton.clicked.connect(self.setMemory)
+        self.addToMemoryButton.clicked.connect(self.addToMemory)
+        
 
     def digitClicked(self):
         '''
@@ -85,18 +89,18 @@ class Dialog(QDialog, Ui_Dialog):
         button = self.sender()
         clickedOperator = button.text()
         operand = float(self.display.text())
-        if clickedOperator == "sqrt":
-            if operand<0.0:
+        if clickedOperator == "Sqrt":
+            if operand < 0.0:
                 self.sbortOperand()
-            return
+                return
             
             result = math.sqrt(operand)
-        elif  clickedOperator == "x^2":
+        elif  clickedOperator == "X^2":
             result = math.pow(operand, 2.0)
         elif clickedOperator == "1/x":
             if operand == 0.0:
                 self.sbortOperand()
-            return
+                return
             
             result = 1.0 / operand
             
@@ -182,7 +186,6 @@ class Dialog(QDialog, Ui_Dialog):
         self.display.setText(str(self.sumSoFar))
         self.sumSoFar = 0.0
         self.wait = True
-       #pass
         
     def pointClicked(self):
         '''小數點按下後的處理方法'''
@@ -227,22 +230,26 @@ class Dialog(QDialog, Ui_Dialog):
     def clearMemory(self):
         '''清除記憶體鍵按下後的處理方法'''
     #40623244
-        pass
+        self.sumInMemory = 0.0
+        self.display.setText(str(self.sumInMemory))
         
     def readMemory(self):
         '''讀取記憶體鍵按下後的處理方法'''
     #40623244
-        pass
+        self.display.setText(str(self.sumInMemory))
+        self.wait = True
         
     def setMemory(self):
         '''設定記憶體鍵按下後的處理方法'''
     #40623244
-        pass
+        self.equalClicked()
+        self.sumInMemory = float(self.display.text())
         
     def addToMemory(self):
         '''放到記憶體鍵按下後的處理方法'''
     #40623244
-        pass
+        self.equalClicked()
+        self.sumInMemory += float(self.display.text())
         
     def createButton(self):
         ''' 建立按鍵處理方法, 以 Qt Designer 建立對話框時, 不需要此方法'''
