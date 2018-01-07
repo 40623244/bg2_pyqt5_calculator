@@ -90,11 +90,11 @@ g.es("---Pandoc---")
 # 選擇所要納入的 Markdown 檔案, 不納入的檔案名稱前方加上  # 即可
 chapter_list = " ".join("./paragraph/" + i for i in [
 "computer_hardware.md",
-"40623242.md", 
-"40623243.md", 
-"40623245.md", 
-"40623240.md", 
-"memory_and_calculate.md", 
+"operating_system.md", 
+"computer_network.md", 
+"computer_programming.md", 
+"computer_aided_design.md", 
+#"leo_editor.md", 
 #"github.md", 
 #"fossil.md", 
 #"onshape.md", 
@@ -117,17 +117,17 @@ g.es('-'*12)</t>
 university_zh: '國立虎尾科技大學'
 institute_zh: '機械設計工程系'
 category_zh: '計算機程式 bg8 期末報告'
-title_zh: 'PyQt5 事件導向計算器'
+title_zh: 'PyQt5 事件導向 計算機'
 title_en: 'PyQt5 Event-Driven Calculator Project'
 author:
-- 設計一乙 40623244 林俊鎧
-- 設計一乙 40623240 何冠均
+- 設計一乙 40623244
+- 設計一乙 40623240
 - 設計一乙 40623241
-- 設計一乙 40623242 高宇辰
-- 設計一乙 40623243 盧逸誠
-- 設計一乙 40623245 練峪愷
+- 設計一乙 40623242
+- 設計一乙 40623243
+- 設計一乙 40623245
 advisor_zh: '嚴家銘'
-date: '2017.12.15'
+date: '2017.12.18'
 ---
 
 @others
@@ -567,18 +567,16 @@ Leo Editor 的概要
 ---
 
 Scripting 的內容</t>
-<t tx="yen.20170429220128.1">40623242 CP
+<t tx="yen.20170429220128.1">Github
 ===
 
 Github 的概要
 
-@others
-</t>
+@others</t>
 <t tx="yen.20170429220137.1">Github
 ---
 
-Github 的內容
-</t>
+Github 的內容</t>
 <t tx="yen.20170429220231.1">Fossil SCM
 ===
 
