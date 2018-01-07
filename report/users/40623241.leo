@@ -26,8 +26,10 @@
 </v>
 <v t="leo.20171119234822.1" a="E"><vh>各章節內容</vh>
 <v t="yen.20170429214845.1" a="E"><vh>@path paragraph</vh>
-<v t="yen.20170429214838.1"><vh>@clean 40623241.md</vh>
-<v t="yen.20170429214838.3"><vh>電腦硬體</vh></v>
+<v t="yen.20170429214838.1" a="E"><vh>@clean 40623241.md</vh>
+<v t="leo.20180107214824.1"><vh>小數點</vh></v>
+<v t="yen.20170429214838.3"><vh>變號按鍵</vh></v>
+<v t="leo.20180107220644.1"><vh>心得</vh></v>
 </v>
 <v t="yen.20170429215041.1"><vh>@clean operating_system.md</vh>
 <v t="yen.20170429215130.1"><vh>Windows</vh></v>
@@ -62,6 +64,12 @@
 </v>
 </v>
 </v>
+</v>
+</v>
+<v t="leo.20180107214747.2" a="E"><vh>Recovered Nodes</vh>
+<v t="leo.20180107214747.3"><vh>Recovered node "摘要" from @clean cover_and_abstract.md</vh>
+<v t="leo.20180107214747.4"><vh>old:摘要</vh></v>
+<v t="leo.20180107214747.5"><vh>new:摘要</vh></v>
 </v>
 </v>
 </vnodes>
@@ -209,6 +217,45 @@ QLineEdit#editorLabel {
 vertical: body pane on the botton</t>
 <t tx="ahshoe.20170317115820.1">---
 abstract: |
+    這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
+    
+    + 以老師原本user.leo為底。
+    + 另存為 學號.leo 來進行編輯
+    + 使用 github協同。
+    + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
+    
+    本研究的重點在於 練習計算機編排、python練習、pyqt5練習
+---
+
+
+</t>
+<t tx="leo.20171119234752.1"></t>
+<t tx="leo.20171119234822.1"></t>
+<t tx="leo.20180107214747.2"></t>
+<t tx="leo.20180107214747.3">(uncached) ahshoe.20170317115820.1
+Diff...
+  ---
+  abstract: |
+-     這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
++     這裡是摘要內容。A pipe character, followed by an indented block of text is treated as a literal block, in which newlines are preserved throughout the block, including the final newline.
+      
+-     + 以老師原本user.leo為底。
+-     + 另存為 學號.leo 來進行編輯
+-     + 使用 github協同。
+-     + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
++     + 以 YAML 的方式插入。
++     + The '+' indicator says to keep newlines at the end of text blocks.
++     + 使用 Markdown 語法。
++     + 前面使用加號
+      
+-     本研究的重點在於 練習計算機編排、python練習、pyqt5練習
++     本研究的重點在於 ...
+  ---
+  
+  
+</t>
+<t tx="leo.20180107214747.4">---
+abstract: |
     這裡是摘要內容。A pipe character, followed by an indented block of text is treated as a literal block, in which newlines are preserved throughout the block, including the final newline.
     
     + 以 YAML 的方式插入。
@@ -221,8 +268,36 @@ abstract: |
 
 
 </t>
-<t tx="leo.20171119234752.1"></t>
-<t tx="leo.20171119234822.1"></t>
+<t tx="leo.20180107214747.5">---
+abstract: |
+    這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
+    
+    + 以老師原本user.leo為底。
+    + 另存為 學號.leo 來進行編輯
+    + 使用 github協同。
+    + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
+    
+    本研究的重點在於 練習計算機編排、python練習、pyqt5練習
+---
+
+
+</t>
+<t tx="leo.20180107214824.1">小數點
+---
+
+當按下小數點的按鍵之後, 以 pointClicked() 方法處理, 並且直接在 display 字串中加上 "." 字串
+
+程式碼
+
+if self.point :
+            self.display.setText(self.display.text() + '.')
+            self.point = False
+            self.wait = False
+    def changeSignClicked(self):</t>
+<t tx="leo.20180107220644.1">心得
+---
+
+這次協同的目的為六個人合力編輯出一套計算機程式，我在這方面學得比較不佳，而且因為家裡有事所已請了很多次假，很可惜都沒聽到課，但在同學有耐心的指導下有追上進度的趨勢，雖然蠻後面才把自己該完成的部分搞定，但也總算是大功告成了，也深深感受到合作的重要性，很多都是大家一起討論，讓我覺得這次的合作很愉快。</t>
 <t tx="yen.20170429103742.1"></t>
 <t tx="yen.20170429103940.1"></t>
 <t tx="yen.20170429132400.1">每一位協同人員各在 users 目錄中建立一個 .leo 檔案
@@ -230,26 +305,31 @@ abstract: |
 各自選擇要編輯的 .md 檔案, 可以使用 @edit 或 @clean 節點編輯指令
 
 除非必要否則不更動 markdown 目錄下的 template.tex 檔案</t>
-<t tx="yen.20170429214838.1">40623241
+<t tx="yen.20170429214838.1">小數點和變號按鍵處理
 ===
 
-電腦硬體 的概要
 
 @others</t>
-<t tx="yen.20170429214838.3">前言內容。
+<t tx="yen.20170429214838.3">變號按鍵
+---
 
-\ 
+按下變號按鍵後, 由 changeSignClicked() 處理, 如果顯示幕上顯示為正值, 就在 display 字串最前面, 加上 "-" 字串
 
-一個範例數學式：$$\beta=\cos^{-1}{\frac{L0^{2}+d_{AB}^{2}-R0^{2}}{2\times{L0\times{d_{AB}}}}}$$
+如果顯示幕上顯示負值, 就會移除 display 上字串最前面的 "-" 字元
 
-\ 
+程式碼
 
-關於數學式可以參考這裡：[http://www.hostmath.com/][]
-
-[http://www.hostmath.com/]: http://www.hostmath.com/
-
-提及了某篇刊物[@myart]在這裡。
-</t>
+ text = self.display.text()
+        value = float(text)
+ 
+        if value &gt; 0.0:
+            text = "-" + text
+        elif value &lt; 0.0:
+            text = text[1:]
+ 
+        self.display.setText(text)
+        
+    def backspaceClicked(self):</t>
 <t tx="yen.20170429214845.1"></t>
 <t tx="yen.20170429215041.1">操作系統
 ===
