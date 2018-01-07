@@ -232,10 +232,12 @@ abstract: |
 <t tx="leo.20171119234822.1"></t>
 <t tx="leo.20180107232106.1">加減運算
 ---
+
 確定運算為加或減, 在按下運算之前在display的數字為運算數
 納入乘除後的先乘除後加減, 且連續按下可累計運算
 
 運算式 :
+
 if self.pendingMultiplicativeOperator:
             if not self.calculate(operand, self.pendingMultiplicativeOperator):
                 self.abortOperation()
@@ -249,6 +251,7 @@ if self.pendingMultiplicativeOperator:
 納入連續按下加減, 可以目前的運算數及運算子累計運算
 
 運算式 :
+
 if self.pendingAdditiveOperator:
             if not self.calculate(operand, self.pendingAdditiveOperator):
                 self.abortOperation()
