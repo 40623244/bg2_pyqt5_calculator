@@ -26,8 +26,9 @@
 </v>
 <v t="leo.20171119234822.1" a="E"><vh>各章節內容</vh>
 <v t="yen.20170429214845.1" a="E"><vh>@path paragraph</vh>
-<v t="yen.20170429214838.1"><vh>@clean 40623243.md</vh>
-<v t="yen.20170429214838.3"><vh>電腦硬體</vh></v>
+<v t="yen.20170429214838.1" a="E"><vh>@clean 40623243.md</vh>
+<v t="leo.20180107232106.1"><vh>加減運算</vh></v>
+<v t="yen.20170429214838.3"><vh>心得</vh></v>
 </v>
 <v t="yen.20170429215041.1"><vh>@clean operating_system.md</vh>
 <v t="yen.20170429215130.1"><vh>Windows</vh></v>
@@ -62,6 +63,12 @@
 </v>
 </v>
 </v>
+</v>
+</v>
+<v t="leo.20180107232444.1" a="E"><vh>Recovered Nodes</vh>
+<v t="leo.20180107232444.2"><vh>Recovered node "摘要" from @clean cover_and_abstract.md</vh>
+<v t="leo.20180107232444.3"><vh>old:摘要</vh></v>
+<v t="leo.20180107232444.4"><vh>new:摘要</vh></v>
 </v>
 </v>
 </vnodes>
@@ -121,10 +128,10 @@ title_zh: 'PyQt5 事件導向計算器'
 title_en: 'PyQt5 Event-Driven Calculator Project'
 author:
 - 設計一乙 40623244 林俊鎧
-- 設計一乙 40623240
-- 設計一乙 40623241
+- 設計一乙 40623240 何冠均
+- 設計一乙 40623241 郭祐齊
 - 設計一乙 40623242 高宇辰
-- 設計一乙 40623243
+- 設計一乙 40623243 盧逸誠
 - 設計一乙 40623245 練峪愷
 advisor_zh: '嚴家銘'
 date: '2017.12.15'
@@ -209,6 +216,70 @@ QLineEdit#editorLabel {
 vertical: body pane on the botton</t>
 <t tx="ahshoe.20170317115820.1">---
 abstract: |
+    這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
+    
+    + 以老師原本user.leo為底。
+    + 另存為 學號.leo 來進行編輯
+    + 使用 github協同。
+    + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
+    
+    本研究的重點在於 練習計算機編排、python練習、pyqt5練習
+---
+
+
+</t>
+<t tx="leo.20171119234752.1"></t>
+<t tx="leo.20171119234822.1"></t>
+<t tx="leo.20180107232106.1">加減運算
+---
+確定運算為加或減, 在按下運算之前在display的數字為運算數
+納入乘除後的先乘除後加減, 且連續按下可累計運算
+
+運算式 :
+if self.pendingMultiplicativeOperator:
+            if not self.calculate(operand, self.pendingMultiplicativeOperator):
+                self.abortOperation()
+                return
+ 
+            self.display.setText(str(self.factorSoFar))
+            operand = self.factorSoFar
+            self.factorSoFar = 0.0
+            self.pendingMultiplicativeOperator = ' '
+ 
+納入連續按下加減, 可以目前的運算數及運算子累計運算
+
+運算式 :
+if self.pendingAdditiveOperator:
+            if not self.calculate(operand, self.pendingAdditiveOperator):
+                self.abortOperation()
+                return
+顯示運算結果
+self.display.setText(str(self.sumSoFar))                            </t>
+<t tx="leo.20180107232444.1"></t>
+<t tx="leo.20180107232444.2">(uncached) ahshoe.20170317115820.1
+Diff...
+  ---
+  abstract: |
+-     這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
++     這裡是摘要內容。A pipe character, followed by an indented block of text is treated as a literal block, in which newlines are preserved throughout the block, including the final newline.
+      
+-     + 以老師原本user.leo為底。
+-     + 另存為 學號.leo 來進行編輯
+-     + 使用 github協同。
+-     + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
++     + 以 YAML 的方式插入。
++     + The '+' indicator says to keep newlines at the end of text blocks.
++     + 使用 Markdown 語法。
++     + 前面使用加號
+      
+-     本研究的重點在於 練習計算機編排、python練習、pyqt5練習
++     本研究的重點在於 ...
+  ---
+  
+  
+</t>
+<t tx="leo.20180107232444.3">---
+abstract: |
     這裡是摘要內容。A pipe character, followed by an indented block of text is treated as a literal block, in which newlines are preserved throughout the block, including the final newline.
     
     + 以 YAML 的方式插入。
@@ -221,8 +292,20 @@ abstract: |
 
 
 </t>
-<t tx="leo.20171119234752.1"></t>
-<t tx="leo.20171119234822.1"></t>
+<t tx="leo.20180107232444.4">---
+abstract: |
+    這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
+    
+    + 以老師原本user.leo為底。
+    + 另存為 學號.leo 來進行編輯
+    + 使用 github協同。
+    + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
+    
+    本研究的重點在於 練習計算機編排、python練習、pyqt5練習
+---
+
+
+</t>
 <t tx="yen.20170429103742.1"></t>
 <t tx="yen.20170429103940.1"></t>
 <t tx="yen.20170429132400.1">每一位協同人員各在 users 目錄中建立一個 .leo 檔案
@@ -230,26 +313,18 @@ abstract: |
 各自選擇要編輯的 .md 檔案, 可以使用 @edit 或 @clean 節點編輯指令
 
 除非必要否則不更動 markdown 目錄下的 template.tex 檔案</t>
-<t tx="yen.20170429214838.1">40623243
+<t tx="yen.20170429214838.1">加減運算按鍵處理
 ===
 
-電腦硬體 的概要
+
+
+
 
 @others</t>
-<t tx="yen.20170429214838.3">前言內容。
+<t tx="yen.20170429214838.3">心得
+---
 
-\ 
-
-一個範例數學式：$$\beta=\cos^{-1}{\frac{L0^{2}+d_{AB}^{2}-R0^{2}}{2\times{L0\times{d_{AB}}}}}$$
-
-\ 
-
-關於數學式可以參考這裡：[http://www.hostmath.com/][]
-
-[http://www.hostmath.com/]: http://www.hostmath.com/
-
-提及了某篇刊物[@myart]在這裡。
-</t>
+經過這次協同完成計算機程式, 比以前更了解程式, 也透過分組方式來分工合作, 每個人也都有屬於自己的工作及目標, 遇到困難時也互相幫忙, 雖然過程不是很順利, 但也因此學到了如何解決及處理問題, 也知道在寫程式時會遇到的困難, 對於個人來說,也算是接觸了較不一樣的領域, 對於自己也有所提升了</t>
 <t tx="yen.20170429214845.1"></t>
 <t tx="yen.20170429215041.1">操作系統
 ===
