@@ -54,12 +54,12 @@ g.es("---Pandoc---")
 
 # 選擇所要納入的 Markdown 檔案, 不納入的檔案名稱前方加上  # 即可
 chapter_list = " ".join("./paragraph/" + i for i in [
-"40623244.md",
-"40623242.md", 
+"40623240.md",
 "40623243.md", 
 "40623245.md", 
-"40623240.md", 
 "40623241.md", 
+"40623242.md", 
+"40623244.md", 
 #"github.md", 
 #"fossil.md", 
 #"onshape.md", 

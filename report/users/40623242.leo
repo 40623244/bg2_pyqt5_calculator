@@ -55,6 +55,7 @@
 <v t="leo.20171225150715.1"><vh>clearall</vh></v>
 <v t="leo.20171225150623.1"><vh>backspace</vh></v>
 <v t="yen.20170429220137.1"><vh>clear</vh></v>
+<v t="leo.20180107213203.1"><vh>心得</vh></v>
 </v>
 <v t="yen.20170429220231.1"><vh>@clean fossil.md</vh>
 <v t="yen.20170429220231.2"><vh>Fossil commands</vh></v>
@@ -64,6 +65,12 @@
 </v>
 </v>
 </v>
+</v>
+</v>
+<v t="leo.20180107211355.2" a="E"><vh>Recovered Nodes</vh>
+<v t="leo.20180107211355.3"><vh>Recovered node "摘要" from @clean cover_and_abstract.md</vh>
+<v t="leo.20180107211355.4"><vh>old:摘要</vh></v>
+<v t="leo.20180107211355.5"><vh>new:摘要</vh></v>
 </v>
 </v>
 </vnodes>
@@ -212,14 +219,14 @@ QLineEdit#editorLabel {
 vertical: body pane on the botton</t>
 <t tx="ahshoe.20170317115820.1">---
 abstract: |
-    這裡是摘要內容。A pipe character, followed by an indented block of text is treated as a literal block, in which newlines are preserved throughout the block, including the final newline.
+    這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
     
-    + 以 YAML 的方式插入。
-    + The '+' indicator says to keep newlines at the end of text blocks.
-    + 使用 Markdown 語法。
-    + 前面使用加號
+    + 以老師原本user.leo為底。
+    + 另存為 學號.leo 來進行編輯
+    + 使用 github協同。
+    + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
     
-    本研究的重點在於 ...
+    本研究的重點在於 練習計算機編排、python練習、pyqt5練習
 ---
 
 
@@ -239,7 +246,21 @@ abstract: |
 
 *離開 backspaceClicked( ) 前 ,將顯示幕中原有字串的 [:-1] 字串, 顯示在 display 上
 
-*若退格後 display上為空字串, 則顯示 0, 並且將 waitingForOperand 起始設為 True, 表示等待新運算數中</t>
+*若退格後 display上為空字串, 則顯示 0, 並且將 waitingForOperand 起始設為 True, 表示等待新運算數中
+
+*程式碼
+
+        def backspaceClicked(self):
+            if self.wait:
+               return
+        
+            text = self.display.text()[:-1]
+            if not text:
+                text = '0'
+                self.wait = True
+
+            self.display.setText(text)
+</t>
 <t tx="leo.20171225150715.1">全部清除按鍵
 ---
 
@@ -252,7 +273,71 @@ abstract: |
 *以 clear( ) 方法處理, 進入函式後, 將現有的運算數重置為 0
 
 *離開 clear( ) 前, 將 waitingForOperand 起始設為 True, 表示等待新運算數中
+
+*程式碼
+
+     def clear(self):
+        if self.waiting:
+            return
+        self.display.setText('')
+        self.waiting = True
+        
 </t>
+<t tx="leo.20180107211355.2"></t>
+<t tx="leo.20180107211355.3">(uncached) ahshoe.20170317115820.1
+Diff...
+  ---
+  abstract: |
+-     這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
++     這裡是摘要內容。A pipe character, followed by an indented block of text is treated as a literal block, in which newlines are preserved throughout the block, including the final newline.
+      
+-     + 以老師原本user.leo為底。
+-     + 另存為 學號.leo 來進行編輯
+-     + 使用 github協同。
+-     + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
++     + 以 YAML 的方式插入。
++     + The '+' indicator says to keep newlines at the end of text blocks.
++     + 使用 Markdown 語法。
++     + 前面使用加號
+      
+-     本研究的重點在於 練習計算機編排、python練習、pyqt5練習
++     本研究的重點在於 ...
+  ---
+  
+  
+</t>
+<t tx="leo.20180107211355.4">---
+abstract: |
+    這裡是摘要內容。A pipe character, followed by an indented block of text is treated as a literal block, in which newlines are preserved throughout the block, including the final newline.
+    
+    + 以 YAML 的方式插入。
+    + The '+' indicator says to keep newlines at the end of text blocks.
+    + 使用 Markdown 語法。
+    + 前面使用加號
+    
+    本研究的重點在於 ...
+---
+
+
+</t>
+<t tx="leo.20180107211355.5">---
+abstract: |
+    這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
+    
+    + 以老師原本user.leo為底。
+    + 另存為 學號.leo 來進行編輯
+    + 使用 github協同。
+    + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
+    
+    本研究的重點在於 練習計算機編排、python練習、pyqt5練習
+---
+
+
+</t>
+<t tx="leo.20180107213203.1">心得
+---
+
+這是一個計算機程式，六個人一起努力的結果，不管結果重不重要，都希望大家分工合作，一點一滴的貢獻，雖然過程中很多問題，但大家都討論很熱烈，這是一個很難得的機會，接受別人的意見，在加上自己的想法，做出最好的決定。</t>
 <t tx="yen.20170429103742.1"></t>
 <t tx="yen.20170429103940.1"></t>
 <t tx="yen.20170429132400.1">每一位協同人員各在 users 目錄中建立一個 .leo 檔案
@@ -597,10 +682,10 @@ Leo Editor 的概要
 ---
 
 Scripting 的內容</t>
-<t tx="yen.20170429220128.1">40623242 計算機程式
+<t tx="yen.20170429220128.1">退格按鍵處理以及清除按鍵處理
 ===
 
-退格按鍵處理以及清除按鍵處理
+
 
 
 
@@ -616,7 +701,18 @@ Scripting 的內容</t>
 
 *以 clear( )方法處理, 進入函式後, 將現有的運算數重置為 0
 
-*離開 clear( ) 前, 將 waitingForOperand 起始設為 True, 表示等待新運算數中</t>
+*離開 clear( ) 前, 將 waitingForOperand 起始設為 True, 表示等待新運算數中
+
+*程式碼
+
+        def clearAll(self):
+                self.sumSoFar = 0.0
+                self.factorSoFar = 0.0
+                self.pendingAdditiveOperator = ''
+                self.pendingMultiplicativeOperator = ''
+                self.display.setText('0')
+                self.waitingForOperand = True
+</t>
 <t tx="yen.20170429220231.1">Fossil SCM
 ===
 
