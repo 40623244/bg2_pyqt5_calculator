@@ -55,7 +55,8 @@
 <v t="yen.20170429220137.1"><vh>Github</vh></v>
 </v>
 <v t="yen.20170429220231.1" a="E"><vh>@clean 40623245.md</vh>
-<v t="yen.20170429220231.2"><vh>multiplicative&amp;Division OperatorClicked</vh></v>
+<v t="yen.20170429220231.2"><vh>乘或除按鍵處理</vh></v>
+<v t="leo.20180107155232.1"><vh>等號按鍵處理</vh></v>
 <v t="leo.20171225150841.1"><vh>心得</vh></v>
 </v>
 <v t="yen.20170429220335.1"><vh>@clean onshape.md</vh>
@@ -123,7 +124,7 @@ title_en: 'PyQt5 Event-Driven Calculator Project'
 author:
 - 設計一乙 40623244 林俊鎧
 - 設計一乙 40623240 何冠均
-- 設計一乙 40623241
+- 設計一乙 40623241 郭祐齊
 - 設計一乙 40623242 高宇辰
 - 設計一乙 40623243 盧逸誠
 - 設計一乙 40623245 練峪愷
@@ -224,10 +225,23 @@ abstract: |
 </t>
 <t tx="leo.20171119234752.1"></t>
 <t tx="leo.20171119234822.1"></t>
-<t tx="leo.20171225150841.1">計算機程式心得.
+<t tx="leo.20171225150841.1">計算機程式期末心得.
 ---
 
-Fossil Commands 的內容</t>
+心得:從一開始分組,選出組長,建立一個合作的倉儲,讓大家能把自己完成的工作能推到一個地方在整合推上去,然後組長分工下去,大家完成自己的工作,不會的就互相討論,沒有分工合作是會做比較慢的,有大家的努力才能如期地完成</t>
+<t tx="leo.20180107155232.1">等號按鍵處理
+---
+
+等號按鍵設定
+
+self.equalButton.clicked.connect(self.equalClicked)
+
+等號按鍵處理
+
+將各加減乘除完之後的運算結果做個整合顯現出來.
+
+
+</t>
 <t tx="yen.20170429103742.1"></t>
 <t tx="yen.20170429103940.1"></t>
 <t tx="yen.20170429132400.1">每一位協同人員各在 users 目錄中建立一個 .leo 檔案
@@ -593,11 +607,21 @@ Fossil SCM 的概要
 <t tx="yen.20170429220231.2">乘或除按鍵處理
 ---
 
-###乘或除按鍵處理
+乘和除按鍵設定
 
-當按下乘或除按鍵時, 程式設定以 multiplicative&amp;Division OperatorClicked處理
-進入 multiplicative&amp;Division OperatorClicked 後, 不需檢查是否有尚未運算的加或減運算子, 因為先乘除後加減
-, 將 sumSoFar 顯示在 display 後, 必須重置 sumSoFar 為 0, 表示運算告一段落</t>
+multiply_divide = [self.timesButton,  self.divisionButton]
+
+乘或除按鍵處理
+
+1.當按下乘或除按鍵時, 程式設定以 multiplicative&amp;Division OperatorClicked處理
+2.進入 multiplicative&amp;DivisionOperatorClicked後, 不需檢查是否有尚未運算的加或減運算子, 因為乘除有優先權
+3.先處理乘與除運算後, 再處理加或減運算, 將 sumSoFar 顯示在 display 後, 必須重置 sumSoFar 為 0, 表示運算告一段落
+
+乘和除按鍵舉例
+
+10+2X5  = 20  
+先計算2X5的地方,計算完的結果和另個10加總起來等於20
+</t>
 <t tx="yen.20170429220335.1">OnShape
 ===
 
