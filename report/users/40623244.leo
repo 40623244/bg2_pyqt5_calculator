@@ -48,7 +48,7 @@
 <v t="yen.20170429215830.1"><vh>機械系統模擬</vh></v>
 <v t="yen.20170429215802.1"><vh>演化運算</vh></v>
 </v>
-<v t="yen.20170429215922.1" a="E"><vh>@clean memory_and_calculate.md</vh>
+<v t="yen.20170429215922.1" a="E"><vh>@clean 40623244.md</vh>
 <v t="leo.20171224213906.1"><vh>記憶體按鍵處理</vh></v>
 <v t="leo.20171224213904.1"><vh>直接運算</vh></v>
 <v t="yen.20170429220001.1"><vh>運算方式</vh></v>
@@ -65,6 +65,12 @@
 </v>
 </v>
 </v>
+</v>
+</v>
+<v t="leo.20180107221012.2" a="E"><vh>Recovered Nodes</vh>
+<v t="leo.20180107221012.3"><vh>Recovered node "摘要" from @clean cover_and_abstract.md</vh>
+<v t="leo.20180107221012.4"><vh>old:摘要</vh></v>
+<v t="leo.20180107221012.5"><vh>new:摘要</vh></v>
 </v>
 </v>
 </vnodes>
@@ -212,14 +218,14 @@ QLineEdit#editorLabel {
 vertical: body pane on the botton</t>
 <t tx="ahshoe.20170317115820.1">---
 abstract: |
-    這裡是摘要內容。A pipe character, followed by an indented block of text is treated as a literal block, in which newlines are preserved throughout the block, including the final newline.
+    這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
     
-    + 以 YAML 的方式插入。
-    + The '+' indicator says to keep newlines at the end of text blocks.
-    + 使用 Markdown 語法。
-    + 前面使用加號
+    + 以老師原本user.leo為底。
+    + 另存為 學號.leo 來進行編輯
+    + 使用 github協同。
+    + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
     
-    本研究的重點在於 ...
+    本研究的重點在於 練習計算機編排、python練習、pyqt5練習
 ---
 
 
@@ -337,6 +343,57 @@ def addToMemory(self):
 內容:
 
 這個計算機程式，是一組六個人共同製作，這考驗著六個人的默契，以及組員之間遇到問題如何解決，不過這是很難得經驗，合作本來就是一件不容易的事，常常會有意見相左的時候，不過這就學習的一部分，發現別人的優點加以學習，並修正自己錯誤的觀念，這樣的合作可以碰撞出很棒的火花。
+</t>
+<t tx="leo.20180107221012.2"></t>
+<t tx="leo.20180107221012.3">(uncached) ahshoe.20170317115820.1
+Diff...
+  ---
+  abstract: |
+-     這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
++     這裡是摘要內容。A pipe character, followed by an indented block of text is treated as a literal block, in which newlines are preserved throughout the block, including the final newline.
+      
+-     + 以老師原本user.leo為底。
+-     + 另存為 學號.leo 來進行編輯
+-     + 使用 github協同。
+-     + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
++     + 以 YAML 的方式插入。
++     + The '+' indicator says to keep newlines at the end of text blocks.
++     + 使用 Markdown 語法。
++     + 前面使用加號
+      
+-     本研究的重點在於 練習計算機編排、python練習、pyqt5練習
++     本研究的重點在於 ...
+  ---
+  
+  
+</t>
+<t tx="leo.20180107221012.4">---
+abstract: |
+    這裡是摘要內容。A pipe character, followed by an indented block of text is treated as a literal block, in which newlines are preserved throughout the block, including the final newline.
+    
+    + 以 YAML 的方式插入。
+    + The '+' indicator says to keep newlines at the end of text blocks.
+    + 使用 Markdown 語法。
+    + 前面使用加號
+    
+    本研究的重點在於 ...
+---
+
+
+</t>
+<t tx="leo.20180107221012.5">---
+abstract: |
+    這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
+    
+    + 以老師原本user.leo為底。
+    + 另存為 學號.leo 來進行編輯
+    + 使用 github協同。
+    + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
+    
+    本研究的重點在於 練習計算機編排、python練習、pyqt5練習
+---
+
+
 </t>
 <t tx="yen.20170429103742.1"></t>
 <t tx="yen.20170429103940.1"></t>
