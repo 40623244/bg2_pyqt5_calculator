@@ -17,14 +17,14 @@ date: '2017.12.15'
 
 ---
 abstract: |
-    這裡是摘要內容。A pipe character, followed by an indented block of text is treated as a literal block, in which newlines are preserved throughout the block, including the final newline.
+    這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
     
-    + 以 YAML 的方式插入。
-    + The '+' indicator says to keep newlines at the end of text blocks.
-    + 使用 Markdown 語法。
-    + 前面使用加號
+    + 以老師原本user.leo為底。
+    + 另存為 學號.leo 來進行編輯
+    + 使用 github協同。
+    + Q&A用報告SciTE來做文字檔編輯，進行討論    
     
-    本研究的重點在於 ...
+    本研究的重點在於 練習計算機編排、python練習、pyqt5練習
 ---
 
 
