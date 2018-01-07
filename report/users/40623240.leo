@@ -29,9 +29,9 @@
 <v t="yen.20170429214838.1"><vh>@clean computer_hardware.md</vh>
 <v t="yen.20170429214838.3"><vh>電腦硬體</vh></v>
 </v>
-<v t="yen.20170429215041.1"><vh>@clean 40623240.md</vh>
-<v t="yen.20170429215130.1"><vh>Windows</vh></v>
-<v t="yen.20170429215205.1"><vh>Ubuntu</vh></v>
+<v t="yen.20170429215041.1" a="E"><vh>@clean 40623240.md</vh>
+<v t="yen.20170429215130.1"><vh>數字按鍵</vh></v>
+<v t="yen.20170429215205.1"><vh>心得</vh></v>
 </v>
 <v t="yen.20170429215252.1"><vh>@clean computer_network.md</vh>
 <v t="yen.20170429215308.1"><vh>IPv4</vh></v>
@@ -62,6 +62,12 @@
 </v>
 </v>
 </v>
+</v>
+</v>
+<v t="leo.20180107223313.2" a="E"><vh>Recovered Nodes</vh>
+<v t="leo.20180107223313.3"><vh>Recovered node "摘要" from @clean cover_and_abstract.md</vh>
+<v t="leo.20180107223313.4"><vh>old:摘要</vh></v>
+<v t="leo.20180107223313.5"><vh>new:摘要</vh></v>
 </v>
 </v>
 </vnodes>
@@ -122,7 +128,7 @@ title_en: 'PyQt5 Event-Driven Calculator Project'
 author:
 - 設計一乙 40623244 林俊鎧
 - 設計一乙 40623240 何冠均
-- 設計一乙 40623241
+- 設計一乙 40623241 郭祐齊
 - 設計一乙 40623242 高宇辰
 - 設計一乙 40623243 盧逸誠
 - 設計一乙 40623245 練峪愷
@@ -209,6 +215,45 @@ QLineEdit#editorLabel {
 vertical: body pane on the botton</t>
 <t tx="ahshoe.20170317115820.1">---
 abstract: |
+    這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
+    
+    + 以老師原本user.leo為底。
+    + 另存為 學號.leo 來進行編輯
+    + 使用 github協同。
+    + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
+    
+    本研究的重點在於 練習計算機編排、python練習、pyqt5練習
+---
+
+
+</t>
+<t tx="leo.20171119234752.1"></t>
+<t tx="leo.20171119234822.1"></t>
+<t tx="leo.20180107223313.2"></t>
+<t tx="leo.20180107223313.3">(uncached) ahshoe.20170317115820.1
+Diff...
+  ---
+  abstract: |
+-     這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
++     這裡是摘要內容。A pipe character, followed by an indented block of text is treated as a literal block, in which newlines are preserved throughout the block, including the final newline.
+      
+-     + 以老師原本user.leo為底。
+-     + 另存為 學號.leo 來進行編輯
+-     + 使用 github協同。
+-     + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
++     + 以 YAML 的方式插入。
++     + The '+' indicator says to keep newlines at the end of text blocks.
++     + 使用 Markdown 語法。
++     + 前面使用加號
+      
+-     本研究的重點在於 練習計算機編排、python練習、pyqt5練習
++     本研究的重點在於 ...
+  ---
+  
+  
+</t>
+<t tx="leo.20180107223313.4">---
+abstract: |
     這裡是摘要內容。A pipe character, followed by an indented block of text is treated as a literal block, in which newlines are preserved throughout the block, including the final newline.
     
     + 以 YAML 的方式插入。
@@ -221,8 +266,20 @@ abstract: |
 
 
 </t>
-<t tx="leo.20171119234752.1"></t>
-<t tx="leo.20171119234822.1"></t>
+<t tx="leo.20180107223313.5">---
+abstract: |
+    這是第八組的計算機概要，利用各自的leo檔分工合作，用協同的方式來做出計算機
+    
+    + 以老師原本user.leo為底。
+    + 另存為 學號.leo 來進行編輯
+    + 使用 github協同。
+    + Q&amp;A用報告SciTE來做文字檔編輯，進行討論    
+    
+    本研究的重點在於 練習計算機編排、python練習、pyqt5練習
+---
+
+
+</t>
 <t tx="yen.20170429103742.1"></t>
 <t tx="yen.20170429103940.1"></t>
 <t tx="yen.20170429132400.1">每一位協同人員各在 users 目錄中建立一個 .leo 檔案
@@ -251,40 +308,36 @@ abstract: |
 提及了某篇刊物[@myart]在這裡。
 </t>
 <t tx="yen.20170429214845.1"></t>
-<t tx="yen.20170429215041.1">操作系統
+<t tx="yen.20170429215041.1">數字按鍵處理
 ===
 
-操作系統 的概要
-
 @others</t>
-<t tx="yen.20170429215130.1">Windows
+<t tx="yen.20170429215130.1">數字按鍵
 ---
+按下數字鍵1即出現1 以此類推
+而0按下一次 就只會出現一次
 
-Windows 的內容
+所以 if self.display.text() == '0' and value == 0.0:
 
-有一張圖片：
 
-![Kmol][]
-
-稱為圖 {@fig:駱駝}。
-
-各 md 檔案可以在 images 目錄下自訂與 md 檔案名稱相同的子目錄存放影像檔案
-
-</t>
-<t tx="yen.20170429215205.1">Ubuntu
+ number=[self.one, self.two, self.three, self.four, self.five, \
+            self.six, self.seven, self.eight, self.nine, self.zero]
+        for i in number:
+            i.clicked.connect(self.digitClicked)
+            
+程式碼
+ button = self.sender()
+        value = int(button.text())
+        if self.display.text() == '0' and value == 0.0:
+            return
+            self.wait =True
+        if self.wait :
+            self.display.clear()
+            self.wait = False
+        self.display.setText(self.display.text() + str(value))</t>
+<t tx="yen.20170429215205.1">心得
 ---
-
-Ubuntu 的內容
-
-有一張圖片：
-
-![Kmol][]
-
-稱為圖 {@fig:駱駝}。
-
-各 md 檔案可以在 images 目錄下自訂與 md 檔案名稱相同的子目錄存放影像檔案
-
-[Kmol]: ./images/operating_system/kmol.png {#fig:駱駝}</t>
+我的部分是設計計算機之中最簡單的部分，所以很快就可以完成，但是途中還是會遇到許多困難和不了解的地方，我會去詢問同學及組長，他們也很快的幫我解決問題，我學習起來並且運用在其他的地方。</t>
 <t tx="yen.20170429215252.1">電腦網路
 ===
 
